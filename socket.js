@@ -5,12 +5,16 @@ import captainModel from './models/captain.model.js';
 let io;
 
 function initializeSocket(server) {
-    io = new Server(server, {
-        cors: {
-            origin: ["https://rapidouber.netlify.app/", "https://uber-backend-production-c74c.up.railway.app/"],
-            methods: ["GET", "POST"]
-        }
-    });
+  io = new Server(server, {
+    cors: {
+      origin: [
+        "https://rapidouber.netlify.app",
+        "https://uber-backend-production-c74c.up.railway.app"
+      ],
+      methods: ["GET", "POST"],
+      credentials: true
+    }
+  });
 
     io.on('connection', (socket) => {
         console.log(`Client connected: ${socket.id}`);
