@@ -14,7 +14,7 @@ connectToDb("ConnectedtoDB");
 const app = express();
 
 app.use(cors({
-  origin: 'https://rapidouber.netlify.app/',
+  origin: 'https://rapidouber.netlify.app',
   credentials: true
 }));
 
